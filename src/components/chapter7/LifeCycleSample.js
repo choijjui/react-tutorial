@@ -19,11 +19,8 @@ class LifeCycleSample extends Component {
         if (nextProps.color !== prevState.color) {
             return { color: nextProps.color };
         }
-        return null;
-    }
 
-    componentDidMount() {
-        console.log('componentDidMount');
+
     }
 
     shouldComponentUpdate(nextProps, nextState) {

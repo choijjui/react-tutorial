@@ -17,16 +17,21 @@ import LifeCycleSample from "./components/chapter7/LifeCycleSample";
 // }
 
 import React, {Component} from 'react';
+import classNames from "classnames/bind"
+import styles from './App.css';
+const styleNames = classNames.bind(styles);
 
 class App extends Component {
     state = {
         color : ''
     }
+
     render() {
+
         return (
-            <div>
-                <button onClick={this.handleButtonClick}>발생</button>
-                <LifeCycleSample color={this.state.color}></LifeCycleSample>
+            <div className={styleNames('box', 'blue')}>
+                {/*<button onClick={this.handleButtonClick}>발생</button>*/}
+                {/*<LifeCycleSample color={this.state.color}></LifeCycleSample>*/}
             </div>
         );
     }
