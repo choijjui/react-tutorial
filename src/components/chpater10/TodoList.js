@@ -22,6 +22,10 @@ class TodoList extends Component {
             </div>
         );
     }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return this.props.todos !== nextProps.todos
+    }
 }
 
 export default TodoList;
