@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js"></script>
+<script>
+    const INCREMENT = 'INCREMENT';
+    const DECREMENT = 'DECREMENT';
+
+    const increment = (diff) =>({
+        type: INCREMENT,
+        diff: diff
+    });
+    const decrement = (diff) =>({
+        type: DECREMENT,
+        diff: diff
+    });
+
+    const initialState = {
+        number: 0,
+        foo: 'bar',
+        baz: 'qux'
+    };
+
+
+    // 리듀서 : 상태를 변화 시키는 로직이 있는 함수로, 네트워크 통신이나 new Date() 와 같은 함수 사용 X
+    function counter(state=initialState, action) {
+        switch(action.type) {
+            case INCREMENT:
+                return Object.assign({}, state, {number: state.number + action.diff})
+            case DECREMENT:
+                return Object.assign({}, state, {number: state.number - action.diff})
+            default:
+                return state
+        }
+    }
+
+
+    const {createStore} = Redux;
+    const store = createStore(counter);
+
+    // 구독 : 스토어 값이 필요한 경우에 구독
+    const unsubscribe = store.subscribe(()=>{
+        console.log(store.getState());
+    })
+
+    // 디스패치 : 액션을 스토어에 전달
+    store.dispatch(increment(1));
+    store.dispatch(increment(5));
+    store.dispatch(increment(10));
+
+</script>
+
+</body>
+</html>
