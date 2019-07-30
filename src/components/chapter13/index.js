@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/chapter13(2)/containers/App';
+import App from './components/chapter13/containers/App';
 import {createStore} from 'redux';
-import reducers from './components/chapter13(2)/reducers';
+import reducers from './components/chapter13/reducers';
 import {Provider} from 'react-redux';
 
 const store = createStore(reducers);
