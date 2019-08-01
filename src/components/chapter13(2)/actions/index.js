@@ -5,12 +5,14 @@ export const create = (color) => ({
     color
 })
 
-export const remove = () => ({
-    type: types.REMOVE
+export const remove = (index) => ({
+    type: types.REMOVE,
+    index
 })
 
-export const increment = () => ({
-    type: types.INCREMENT
+export const increment = (index) => ({
+    type: types.INCREMENT,
+    index
 })
 
 export const decrement = () => ({

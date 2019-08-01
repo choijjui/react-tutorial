@@ -9,7 +9,7 @@ const Counter = ({number, color, index, onIncrement, onDecrement, onSetColor}) =
             className="Counter"
             onClick={()=>{onIncrement(index)}}
             onContextMenu={(e)=>{e.preventDefault(); onDecrement(index);}}
-            onDoubleClick={()=>onSetColor(color)}
+            onDoubleClick={()=>onSetColor(index)}
             style={{backgroundColor: color}}>
             {number}
         </div>

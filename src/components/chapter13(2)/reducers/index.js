@@ -9,7 +9,7 @@ const initialState = {
 
 function counter(state = initialState, action) {
     const {counters} = state;
-    console.log(state, action);
+
     switch (action.type) {
         case types.CREATE:
             return {
